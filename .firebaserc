@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "default": "project-staging",
+    "prod": "project-app",
+    "staging": "project-staging"
+  }
+}
