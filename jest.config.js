@@ -1,3 +1,5 @@
+const esModules = ['@angular', '@firebase', 'firebase', '@ngrx', '@ngneat'].join('|');
+
 module.exports = {
   preset: 'jest-preset-angular',
   setupFilesAfterEnv: ['<rootDir>/src/setupJest.ts'],
@@ -39,8 +41,7 @@ module.exports = {
     '<rootDir>/coverage/',
   ],
   transformIgnorePatterns: [
-    "node_modules/(?!@angular|@firebase|firebase|@ngrx)",
-    'node_modules/(?!.*\\.mjs$)'
+    `node_modules/(?!(${esModules}|@angular/fire/node_modules/@firebase|.*.mjs$))`,
   ],
   cacheDirectory: './jest-cache'
 };

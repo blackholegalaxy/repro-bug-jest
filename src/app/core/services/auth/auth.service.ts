@@ -7,15 +7,6 @@ import { tap, distinctUntilChanged } from 'rxjs/operators';
 import firebase from 'firebase/compat/app';
 import '@firebase/auth';
 
-import UserCredential = firebase.auth.UserCredential;
-
-export const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
-export const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
-export const appleAuthProvider = new firebase.auth.OAuthProvider('apple.com');
-export const twitterAuthProvider = new firebase.auth.TwitterAuthProvider();
-export const githubAuthProvider = new firebase.auth.GithubAuthProvider();
-export const microsoftAuthProvider = new firebase.auth.OAuthProvider('microsoft.com');
-export const yahooAuthProvider = new firebase.auth.OAuthProvider('yahoo.com');
 
 @Injectable({
   providedIn: 'root'
