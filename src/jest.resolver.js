@@ -36,7 +36,8 @@ module.exports = (path, options) => {
         '@firebase/firestore-compat',
         '@firebase/messaging',
         '@firebase/util',
-        'firebase'
+        'firebase/compat',
+        'firebase',
       ]);
 
       if (pkgNamesToTarget.has(pkg.name)) {

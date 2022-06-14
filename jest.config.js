@@ -1,4 +1,4 @@
-const esModules = ['@angular', '@firebase', 'firebase', '@ngrx', '@ngneat'].join('|');
+// const esModules = ['@angular', '@firebase', 'firebase', '@ngrx', '@ngneat'].join('|');
 
 module.exports = {
   preset: 'jest-preset-angular',
@@ -40,8 +40,9 @@ module.exports = {
   modulePathIgnorePatterns: [
     '<rootDir>/coverage/',
   ],
-  transformIgnorePatterns: [
-    `node_modules/(?!(${esModules}|@angular/fire/node_modules/@firebase|.*.mjs$))`,
-  ],
+  // transformIgnorePatterns: [
+  //   `node_modules/(?!(${esModules}|@angular/fire/node_modules/@firebase|.*.mjs$))`,
+  // ],
+  resolver: '<rootDir>/src/jest.resolver.js',
   cacheDirectory: './jest-cache'
 };
