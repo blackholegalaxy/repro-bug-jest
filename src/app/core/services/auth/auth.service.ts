@@ -7,6 +7,26 @@ import { tap, distinctUntilChanged } from 'rxjs/operators';
 import firebase from 'firebase/compat/app';
 import '@firebase/auth';
 
+import UserCredential = firebase.auth.UserCredential;
+
+export const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
+export const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+export const appleAuthProvider = new firebase.auth.OAuthProvider('apple.com');
+export const twitterAuthProvider = new firebase.auth.TwitterAuthProvider();
+export const githubAuthProvider = new firebase.auth.GithubAuthProvider();
+export const microsoftAuthProvider = new firebase.auth.OAuthProvider('microsoft.com');
+export const yahooAuthProvider = new firebase.auth.OAuthProvider('yahoo.com');
+
+export enum AuthProvider {
+  ALL = 'all',
+  EmailAndPassword = 'firebase',
+  Google = 'google',
+  Apple = 'apple',
+  Facebook = 'facebook',
+  Twitter = 'twitter',
+  Github = 'github',
+  Microsoft = 'microsoft',
+}
 
 @Injectable({
   providedIn: 'root'
@@ -41,5 +61,55 @@ export class AuthService {
       }),
       distinctUntilChanged(),
     );
+  }
+
+  public async signInWith(provider: AuthProvider, credentials?: { email: string; password: string; }) {
+    try {
+      let signInResult: UserCredential | any;
+
+      switch (provider) {
+        case AuthProvider.EmailAndPassword:
+          signInResult = await this.angularFireAuth
+            .signInWithEmailAndPassword(credentials.email, credentials.password) as UserCredential;
+          break;
+
+        case AuthProvider.Google:
+          signInResult = await this.angularFireAuth
+            .signInWithPopup(googleAuthProvider) as UserCredential;
+          break;
+
+        case AuthProvider.Apple:
+          signInResult = await this.angularFireAuth
+            .signInWithPopup(appleAuthProvider) as UserCredential;
+          break;
+
+        case AuthProvider.Facebook:
+          signInResult = await this.angularFireAuth
+            .signInWithPopup(facebookAuthProvider) as UserCredential;
+          break;
+
+        case AuthProvider.Twitter:
+          signInResult = await this.angularFireAuth
+            .signInWithPopup(twitterAuthProvider) as UserCredential;
+          break;
+
+        case AuthProvider.Github:
+          signInResult = await this.angularFireAuth
+            .signInWithPopup(githubAuthProvider) as UserCredential;
+          break;
+
+        case AuthProvider.Microsoft:
+          signInResult = await this.angularFireAuth
+            .signInWithPopup(microsoftAuthProvider) as UserCredential;
+          break;
+
+        default:
+          throw new Error(`${AuthProvider[provider]} is not available as auth provider`);
+      }
+
+      console.log(signInResult);
+    } catch (err) {
+      console.error('signin', err);
+    }
   }
 }
