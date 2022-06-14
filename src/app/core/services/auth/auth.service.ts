@@ -9,15 +9,15 @@ import '@firebase/auth';
 
 import UserCredential = firebase.auth.UserCredential;
 
-export const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
-export const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
-export const appleAuthProvider = new firebase.auth.OAuthProvider('apple.com');
-export const twitterAuthProvider = new firebase.auth.TwitterAuthProvider();
-export const githubAuthProvider = new firebase.auth.GithubAuthProvider();
-export const microsoftAuthProvider = new firebase.auth.OAuthProvider('microsoft.com');
-export const yahooAuthProvider = new firebase.auth.OAuthProvider('yahoo.com');
+const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
+const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+const appleAuthProvider = new firebase.auth.OAuthProvider('apple.com');
+const twitterAuthProvider = new firebase.auth.TwitterAuthProvider();
+const githubAuthProvider = new firebase.auth.GithubAuthProvider();
+const microsoftAuthProvider = new firebase.auth.OAuthProvider('microsoft.com');
+const yahooAuthProvider = new firebase.auth.OAuthProvider('yahoo.com');
 
-export enum AuthProvider {
+enum AuthProvider {
   ALL = 'all',
   EmailAndPassword = 'firebase',
   Google = 'google',
