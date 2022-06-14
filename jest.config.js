@@ -44,5 +44,5 @@ module.exports = {
   //   `node_modules/(?!(${esModules}|@angular/fire/node_modules/@firebase|.*.mjs$))`,
   // ],
   resolver: '<rootDir>/src/jest.resolver.js',
-  cacheDirectory: './jest-cache'
+  cacheDirectory: './jest-cache',
 };
