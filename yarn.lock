@@ -4994,7 +4994,7 @@ __metadata:
     ngx-toastr: 14.3.0
     recursive-readdir: 2.2.2
     rxjs: 7.5.5
-    ts-jest: 28.0.4
+    ts-jest: 28.0.5
     ts-md5: 1.2.11
     ts-node: 10.8.1
     tslib: 2.4.0
@@ -15432,7 +15432,37 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-jest@npm:28.0.4, ts-jest@npm:^28.0.0":
+"ts-jest@npm:28.0.5":
+  version: 28.0.5
+  resolution: "ts-jest@npm:28.0.5"
+  dependencies:
+    bs-logger: 0.x
+    fast-json-stable-stringify: 2.x
+    jest-util: ^28.0.0
+    json5: ^2.2.1
+    lodash.memoize: 4.x
+    make-error: 1.x
+    semver: 7.x
+    yargs-parser: ^21.0.1
+  peerDependencies:
+    "@babel/core": ">=7.0.0-beta.0 <8"
+    babel-jest: ^28.0.0
+    jest: ^28.0.0
+    typescript: ">=4.3"
+  peerDependenciesMeta:
+    "@babel/core":
+      optional: true
+    babel-jest:
+      optional: true
+    esbuild:
+      optional: true
+  bin:
+    ts-jest: cli.js
+  checksum: 53e05db5b7e1e4f4137c47594f902f5caf585ebc73dda67c4552c1ed784d4fde532c5693a61d877d9462290c7965233c2124050b0f00fd4c85cde9bb1a51c974
+  languageName: node
+  linkType: hard
+
+"ts-jest@npm:^28.0.0":
   version: 28.0.4
   resolution: "ts-jest@npm:28.0.4"
   dependencies:
@@ -16467,7 +16497,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yargs-parser@npm:21.0.1, yargs-parser@npm:^21.0.0":
+"yargs-parser@npm:21.0.1, yargs-parser@npm:^21.0.0, yargs-parser@npm:^21.0.1":
   version: 21.0.1
   resolution: "yargs-parser@npm:21.0.1"
   checksum: c3ea2ed12cad0377ce3096b3f138df8267edf7b1aa7d710cd502fe16af417bafe4443dd71b28158c22fcd1be5dfd0e86319597e47badf42ff83815485887323a
